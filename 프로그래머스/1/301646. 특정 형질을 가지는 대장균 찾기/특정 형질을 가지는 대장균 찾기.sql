@@ -1,10 +1,8 @@
 # 1 bit : 1
 # 2 bit : NaN
 # 3 bit : 100, 101
-# 4 bit 이상 : %100, %101 
+# 4 bit 이상 : %100, %01 
 
 SELECT COUNT(ID) AS COUNT
 FROM ECOLI_DATA
 WHERE BIN(GENOTYPE) = '1' OR BIN(GENOTYPE) LIKE '%100' OR BIN(GENOTYPE) LIKE '%01'
-
-

@@ -1,6 +1,6 @@
 SELECT ORDER_ID, 
        PRODUCT_ID,
-       DATE_FORMAT(OUT_DATE, '%Y-%m-%d'),
+       DATE_FORMAT(OUT_DATE, '%Y-%m-%d') AS OUT_DATE,
        CASE
            WHEN OUT_DATE IS NULL THEN '출고미정'
            WHEN OUT_DATE <= CAST('2022-05-01' AS DATE) THEN '출고완료'

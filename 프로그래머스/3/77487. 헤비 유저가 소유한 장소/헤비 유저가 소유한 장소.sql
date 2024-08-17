@@ -1,0 +1,11 @@
+WITH heavy_user AS (
+    SELECT DISTINCT HOST_ID
+    FROM PLACES
+    GROUP BY HOST_ID
+    HAVING COUNT(*) >= 2
+)
+
+SELECT p.*
+FROM PLACES p
+JOIN heavy_user h ON p.HOST_ID = h.HOST_ID
+ORDER BY ID
